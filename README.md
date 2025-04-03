@@ -1,2 +1,3 @@
-# Cosmic-Skincare-website
-An interactive website for a skincare brand
+# Cosmic-website
+An interactive website for a virtual skincare brand called Cosmic
+
