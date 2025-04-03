@@ -28,7 +28,11 @@ Cosmic Skincare is a front-end web project showcasing a clean, user-friendly int
 - **CSS3** – Custom stylesheets split by purpose  
 - **JavaScript (Vanilla)** – Interactive elements (4%)
 
+##  License
 
+© 2025 Eslem Mastouri. All rights reserved.
+
+This project is for educational and personal portfolio purposes only. Unauthorized use, reproduction, or distribution of any part of this website without permission is prohibited.
 
 
 
