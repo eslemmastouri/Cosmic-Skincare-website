@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0;
+    background-color: #F4F4F4;
+    background-image: url(imgss/bgAura2.jpg);
+    background-repeat: no-repeat;
+}
+
+/* Navbar */
+header{
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 50px;
+    align-items: center;
+}
+
+header .logo img {
+    width: 70px;
+    margin-top: 10px;
+}
+
+header nav a{
+    margin-left: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+header nav a:hover {
+    color: #8E70F2;
+
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+.container h2 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #8E70F2;
+    font-size: 3em;
+    font-family: poppins, sans-serif;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.input-group {
+    margin-bottom: 2px;
+}
+
+.input-group label {
+    font-family: Poppins, sans-serif;
+    font-size: 0.9em;
+    color: #7354d9;
+    margin-bottom: 3px;
+    display: block;
+    position: relative;
+    top: -35px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #8E70F2;
+    outline: none;
+    font-size: 1em;
+    padding: 5px 0;
+    font-family: Poppins, sans-serif;
+    color: #333;
+    background-color: transparent;
+    position: relative;
+    top: -50px;
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    margin-top: 20px; 
+}
+
+.btn {
+    flex: 1; 
+    max-width: 180px; 
+    height: 50px; 
+    text-align: center; 
+    font-size: 1em; 
+    font-family: Poppins, sans-serif; 
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+
+.btn.sign-up {
+    background-color: #8E70F2;
+    color: white;
+    border: none;
+}
+
+.btn.sign-up:hover {
+    background-color: #7354d9;
+    transform: scale(1.05); 
+}
+/* Botões da página Sign Up */
+.btn.login {
+    background-color: transparent;
+    color: #8E70F2;
+    border: 2px solid #8E70F2;
+}
+
+.btn.login:hover {
+    background-color: #ffffff;
+    color: #8E70F2;
+    border: 2px solid white;
+    transform: scale(1.05); 
+}
+
+/* Botões da página Login */
+.btn.login2 {
+    background-color: #8E70F2;
+    color: #ffffff;
+    border: none;
+}
+
+.btn.login2:hover {
+    background-color: #7354d9;
+    transform: scale(1.05); 
+}
+
+.btn.sign-up2 {
+    background-color: transparent;
+    color: #8E70F2;
+    border: 2px solid #8E70F2;
+}
+
+.btn.sign-up2:hover {
+    background-color: #ffffff;
+    color: #8E70F2;
+    border: 2px solid white;
+    transform: scale(1.05); /
+}
+
+.btn.message {
+    background-color: #8E70F2;
+    color: #ffffff;
+    border: none;
+}
+
+.btn.message:hover {
+    background-color: #7354d9;
+    transform: scale(1.05); 
+}
+
+.input-group textarea {
+    background-color: transparent;
+    border: 1px solid #8E70F2;
+    margin-top: -20px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    width: 95%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+}
+
+.input-group textarea:focus {
+    border-color: #8E70F2; 
+}
+/* Classe de animação */
+.animation {
+    opacity: 0;
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+}
+
+/* Definição do keyframe de animação */
+@keyframes showContent {
+    from {
+        transform: translateY(-30px);
+        filter: blur(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.container h2 {
+    animation-delay: 0.5s;
+}
+
+.container .input-group:nth-child(1) {
+    animation-delay: 0.7s;
+}
+.container .input-group:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+/* Estilo geral do pop-up */
+.popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out; 
+}
+
+#popup .popup-content {
+    background-color: #c6b5fc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: slideIn 0.5s ease-out; 
+}
+
+.popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px  #8E70F2;
+    font-family: Poppins, sans-serif;
+}
+
+/* Estilo das perguntas e opções */
+.question {
+    font-size: 18px;
+    color:#7354d9;;
+    margin-bottom: 15px;
+    font-family: Poppins, sans-serif;
+}
+
+.options {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #7354d9;
+    font-family: Poppins, sans-serif;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+}
+.popupbtn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    gap: 10px;
+}
+
+#popup .btn.next {
+    padding: 12px 20px;
+    background-color: #8E70F2; 
+    color: white; 
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: Poppins, sans-serif;
+}
+
+#popup .btn.next:hover {
+    background-color: #7354d9;
+    color: #ffffff; ;  
+}
+
+#popup .btn.close {
+    padding: 12px 20px;
+    background-color:transparent; 
+    color: white; 
+    border: 1px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: Poppins, sans-serif;
+}
+
+#popup .btn.close:hover {
+    background-color: #ffffff;
+    color: #8E70F2; 
+}
+
+.footer {
+    background: #8E70F2; 
+    color: #ffffff; 
+    text-align: center;
+    padding: 10px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    z-index: 10; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.footer p {
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic - Contact Us</title>
+    <link rel="stylesheet" href="styleAuth.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./imgss/logoCosmicPPL.png" alt="logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="signUp.html">Sign-Up</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="animation">Contact Us</h2>
+        <form>
+            <div class="input-group animation">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group animation">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group animation">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn message" id="sendMessage">Send Message</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Clarisse Cecconi, Islem Mastoury, Maria Carolina Castilho.</p>
+    </footer>
+
+    <script>
+        const form = document.querySelector('form');
+        const messageButton = document.getElementById('sendMessage');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Message Sent');
+            });
+
+    </script>
+
+</body>
+
+</html>

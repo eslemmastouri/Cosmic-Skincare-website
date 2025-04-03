@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic - Checkout</title>
+    <link rel="stylesheet" href="styleCart.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./imgss/logoCosmicPPL.png" alt="logo">
+        </div>
+        <nav>
+            <a href="index2.html">Home</a>
+            <a href="checkout.html">My Cart</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="animation">My Cart</h2>
+
+        <table id="myTable">
+            <tr>
+
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+
+        </table>
+
+        <div class="button-container">
+            <button class="btn-payment">Proceed payment</button>
+            <a href="index2.html" class="btn-back">Add more items</a>
+
+        </div>
+
+
+    </div>
+    <div class="box">
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <table>
+                <tr>
+                    <td>Products</td>
+                    <td id="product-count">0</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td id="shipping-cost">$7</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="total">Total: <span id="total-price">$0</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Clarisse Cecconi, Islem Mastoury, Maria Carolina Castilho.</p>
+    </footer>
+
+
+    <script>
+        // Aguarda o carregamento completo do DOM antes de executar o script
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            // Seleciona a tabela onde os itens do carrinho serão exibidos
+            const cartTable = document.querySelector('#myTable');
+    
+            // Recupera os itens do carrinho do localStorage e os converte em um array, ou define como vazio se não houver dados
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Percorre cada item do carrinho
+            cart.forEach(item => {
+                // Insere uma nova linha na tabela para cada item do carrinho
+                const newRow = cartTable.insertRow();
+    
+                // Cria células para o produto, quantidade, preço e total
+                const productCell = newRow.insertCell(0);
+                const quantityCell = newRow.insertCell(1);
+                const priceCell = newRow.insertCell(2);
+                const totalCell = newRow.insertCell(3);
+    
+                // Preenche as células com os dados do item atual do carrinho
+                productCell.textContent = item.product; // Nome do produto
+                quantityCell.textContent = item.quantity; // Quantidade do produto
+                priceCell.textContent = item.price; // Preço unitário
+                totalCell.textContent = (item.quantity * parseFloat(item.price)).toFixed(2); // Preço total (quantidade * preço unitário)
+            });
+    
+            // Verifica se o carrinho está vazio e exibe uma mensagem caso não haja itens
+            if (cart.length === 0) {
+                const row = cartTable.insertRow(); // Adiciona uma linha única para a mensagem de carrinho vazio
+                const cell = row.insertCell(0); // Cria uma célula que ocupa toda a linha
+                cell.colSpan = 4; // Mescla todas as colunas em uma célula
+                cell.textContent = 'Seu carrinho está vazio.'; // Exibe a mensagem
+                cell.style.textAlign = 'center'; // Centraliza o texto na célula
+            }
+        });
+    </script>
+    <script>
+        // Aguarda o carregamento do DOM antes de executar o código
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || []; // Recupera o carrinho do localStorage
+            const productCountElement = document.getElementById('product-count'); // Elemento que mostra a contagem de produtos
+            const totalPriceElement = document.getElementById('total-price'); // Elemento que mostra o preço total
+            const shippingCost = 7; // Custo fixo de envio
+    
+            // Calcula a quantidade total de produtos e o preço total
+            let productCount = 0;
+            let totalPrice = 0;
+    
+            cart.forEach(item => {
+                productCount += item.quantity; // Soma a quantidade de cada produto
+                totalPrice += item.quantity * parseFloat(item.price); // Calcula o preço total
+            });
+    
+            // Atualiza o HTML com os valores calculados
+            productCountElement.textContent = productCount;
+            totalPriceElement.textContent = `$${(totalPrice + shippingCost).toFixed(2)}`;
+        });
+
+    </script>
+    
+    <script>
+        // Aguarda o carregamento do DOM antes de executar o código
+        document.addEventListener('DOMContentLoaded', function () {
+            const proceedPaymentButton = document.querySelector('.btn-payment'); // Botão para continuar o pagamento
+    
+            // Verifica se o botão existe no DOM
+            if (proceedPaymentButton) {
+                proceedPaymentButton.addEventListener('click', function () {
+                    try {
+                        // Recupera o carrinho do localStorage
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+                        // Verifica se o carrinho está vazio
+                        if (cart.length === 0) {
+                            alert('Seu carrinho está vazio! Adicione alguns itens antes de continuar com o pagamento.');
+                            return;
+                        }
+    
+                        // Simula a confirmação de pagamento
+                        let confirmationMessage = document.getElementById('payment-confirmation');
+    
+                        // Se a mensagem de confirmação não existir, cria uma nova
+                        if (!confirmationMessage) {
+                            confirmationMessage = document.createElement('span');
+                            confirmationMessage.textContent = 'Pagamento Confirmado!'; // Texto da mensagem
+                            confirmationMessage.id = 'payment-confirmation'; // Define um ID para o elemento
+    
+                            // Adiciona a mensagem de confirmação no container do botão
+                            proceedPaymentButton.parentElement.appendChild(confirmationMessage);
+                        }
+    
+                        // Limpa o carrinho após a confirmação do pagamento
+                        localStorage.removeItem('cart'); // Remove os itens do localStorage
+    
+                        // Notifica o usuário
+                        alert('Pagamento confirmado!'); // Alerta de confirmação
+                    } catch (error) {
+                        // Trata erros durante o processo
+                        console.error('Ocorreu um erro:', error); // Mostra o erro no console
+                        alert('Algo deu errado. Por favor, tente novamente.'); // Alerta de erro para o usuário
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

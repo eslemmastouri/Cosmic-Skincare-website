@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic - Login</title>
+    <link rel="stylesheet" href="styleAuth.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imgss/logoCosmicPPL.png" alt="logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="signUp.html">Sign-Up</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="animation">Login</h2>
+        <form>
+            <div class="input-group animation">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group animation">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn login2">LOGIN</button>
+            </div>
+        </form>
+
+        <div class="button-container">
+            <a href="signUp.html" class="btn sign-up2">SIGN UP</a>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Clarisse Cecconi, Islem Mastoury, Maria Carolina Castilho.</p>
+    </footer>
+
+    <script>
+        const form = document.querySelector('form');
+
+        // Adiciona um evento ao formulário para lidar com o envio
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Valida as credenciais de login 
+            if (username === 'natercia' && password === 'isla') {
+                alert('Login successful!');
+                window.location.href = 'index2.html'; // Redireciona para a página inicial logado
+            } else {
+                alert('Username or password incorrect. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

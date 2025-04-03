@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic - Sign Up</title>
+    <link rel="stylesheet" href="styleAuth.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imgss/logoCosmicPPL.png" alt="logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="signUp.html">Sign-Up</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2 class="animation">Sign Up</h2>
+        <form>
+            <div class="input-group animation">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group animation">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group animation">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group animation">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn sign-up" id="submitForm">SIGN UP</button>
+            </div>
+        </form>
+
+        <div class="button-container">
+            <a href="login.html" class="btn login" id='login'>LOGIN</a>
+        </div>
+    </div>
+
+    <div class="popup-background" id="popup">
+        <div class="popup-content">
+            <h2><p> Help us get to know you</p></h2>
+            <div id="quiz">
+                <div class="question" id="question1">
+                    <p> How often do you apply skincare in your routine?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="twice"> Twice everyday</label><br>
+                        <label><input type="radio" name="q1" value="once"> Once everyday</label><br>
+                        <label><input type="radio" name="q1" value="six"> 3 to 6 times per week</label><br>
+                        <label><input type="radio" name="q1" value="irregularly">Irregularly</label>
+                    </div>
+                </div>
+                <div class="question" id="question2" style="display: none;">
+                    <p> What is your skin type? </p>
+                    <p> (If you don't know, no worries, we will help you to get to know your skin better!)</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="dry"> Dry</label><br>
+                        <label><input type="radio" name="q2" value="oily"> Oily</label><br>
+                        <label><input type="radio" name="q2" value="combination"> Combination</label><br>
+                        <label><input type="radio" name="q2" value="normal"> Normal </label><br>
+                        <label><input type="radio" name="q2" value="acne"> Acne</label><br>
+                        <label><input type="radio" name="q2" value="sensitive"> Sensitive</label><br>
+                        <label><input type="radio" name="q2" value="unknown"> I don't know</label>
+                    </div>
+                </div>
+            </div>
+            <div class="popupbtn">
+                <button id="nextQuestion" class="btn next">Next</button>
+                <button onclick="closePopup()" class="btn close">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 Clarisse Cecconi, Islem Mastoury, Maria Carolina Castilho.</p>
+    </footer>
+
+    <script>
+        const popup = document.getElementById('popup');
+        const form = document.querySelector('form');
+        const nextQuestionButton = document.getElementById('nextQuestion');
+        let currentQuestion = 1;
+
+        // Verifica se as senhas correspondem e exibe o pop-up
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password === confirmPassword) {
+                popup.style.display = 'flex';
+            } else {
+                alert('Passwords do not match');
+            }
+        });
+
+        // Fecha o pop-up e reseta para a primeira pergunta
+        function closePopup() {
+            popup.style.display = 'none';
+            currentQuestion = 1;
+            document.getElementById('question1').style.display = 'block';
+            document.getElementById('question2').style.display = 'none';
+        }
+
+        // Avança para a próxima pergunta ou conclui o questionário
+        nextQuestionButton.addEventListener('click', () => {
+            if (currentQuestion === 1) {
+                document.getElementById('question1').style.display = 'none';
+                document.getElementById('question2').style.display = 'block';
+                currentQuestion++;
+            } else if (currentQuestion === 2) {
+                alert('Welcome to Cosmic!');
+                closePopup();
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

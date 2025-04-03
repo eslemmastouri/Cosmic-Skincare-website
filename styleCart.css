@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-image: url(./imgss/bgAura2.jpg);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+}
+
+/* Navbar */
+header {
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 100px;
+    height: 50px;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+    position: relative;
+    z-index: 2; 
+}
+
+nav a:hover {
+    color: #8E70F2;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.container h2 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #8E70F2;
+    font-size: 2em;
+    font-family: Poppins, sans-serif;
+    margin-bottom: 20px;
+    font-weight: 500;
+    animation: showContent 0.5s ease-in-out; /* Atraso para o título */
+}
+
+/* Segundo container */
+.box {
+    margin-top: -362px;
+    max-width: 420px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 990px;
+}
+
+/* Primeira tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    animation: showContent 1.2s ease-in-out; /* Animação aplicada */
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1.5px solid #ddd;
+    font-family: Poppins, sans-serif;
+}
+
+table th {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+table td {
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.btn-payment {
+    border: none;
+    background-color: #8E70F2;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+}
+
+.btn-payment:hover {
+    background-color: #560c8a;
+    transform: translateY(-3px);
+}
+
+.btn-back {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    border: 2px solid #560c8a;
+    background-color: transparent;
+    color: #560c8a;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+
+}
+
+.btn-back:hover {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Segunda tabela */
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    animation: showContent 1.2s ease-in-out;
+}
+
+.order-summary th, .order-summary td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    animation: showContent 1.4s ease-in-out; 
+}
+
+.order-summary .total {
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+    color: #560c8a;
+    margin-top: 50px;
+    font-family: Poppins, sans-serif;
+    animation: showContent 1.2s ease-in-out; 
+}
+
+.order-summary h3 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 15px #8E70F2;
+    font-size: 2em;
+    font-family: Poppins, sans-serif;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    animation: showContent 0.8s ease-in-out; 
+}
+
+.order-summary p {
+    font-size: 16px;
+    margin: 20px 10px;
+    margin-left: 20px;
+    font-family: Poppins, sans-serif;
+    animation: showContent 1.3s ease-in-out; 
+}
+
+.footer {
+    background: #8E70F2; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 10px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    z-index: 10; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.footer p {
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@keyframes showContent {
+    from {
+        transform: translateY(-30px);
+        filter: blur(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    table th,
+    table td {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .order-summary {
+        padding: 10px;
+    }
+}
